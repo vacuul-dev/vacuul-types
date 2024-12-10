@@ -3,8 +3,11 @@ export interface Machine {
   createdAt: Date; // Timestamp for creation
   updatedAt: Date; // Timestamp for updates
   location: string; // Location of the machine
+  latitude: number; // Latitude of the machine
+  longitude: number; // Longitude of the machine
   status: "active" | "inactive"; // Enum for machine status
 }
+
 
 export interface Session {
   id: number; // Primary key, auto-increment
