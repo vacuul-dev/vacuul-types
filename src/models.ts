@@ -65,3 +65,13 @@ export interface TimeSlot {
   endTime: string;
   state: "reserved" | "assigned";
 }
+
+export interface Feedback {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+
+  appointmentId: string;
+  rating: number;
+  feedback: string;
+}
