@@ -1,7 +1,7 @@
 export interface Machine {
-  id: number;
-  createdAt: Date;
-  updatedAt: Date;
+  id: string;
+  createdAt: string;
+  updatedAt: string;
 
   latitude: number;
   longitude: number;
@@ -11,34 +11,34 @@ export interface Machine {
 }
 
 export interface Appointment {
-  id: number;
-  createdAt: Date;
-  updatedAt: Date;
+  id: string;
+  createdAt: string;
+  updatedAt: string;
 
-  userId: number;
-  machineId: number;
-  timeSlotId: number;
-  therapyId: number;
-  paymentId: number | null;
+  userId: string;
+  machineId: string;
+  timeSlotId: string;
+  therapyId: string;
+  paymentId: string | null;
   state: "pending" | "acquired" | "completed" | "cancelled";
 }
 
 export interface Therapy {
-  id: number;
-  createdAt: Date;
-  updatedAt: Date;
+  id: string;
+  createdAt: string;
+  updatedAt: string;
 
-  appointmentId: number;
-  settings: Record<string, unknown>;
+  appointmentId: string;
+  settings: Record<string, any>;
   active: boolean;
 }
 
 export interface Payment {
-  id: number;
-  createdAt: Date;
-  updatedAt: Date;
+  id: string;
+  createdAt: string;
+  updatedAt: string;
 
-  userId: number;
+  userId: string;
 
   amountInCents: number;
   paymentState: "pending" | "completed" | "failed";
@@ -46,22 +46,22 @@ export interface Payment {
 }
 
 export interface MachineError {
-  id: number;
-  createdAt: Date;
-  updatedAt: Date;
+  id: string;
+  createdAt: string;
+  updatedAt: string;
 
-  machineId: number;
+  machineId: string;
   errorDetails: string;
-  loggedAt: Date;
+  loggedAt: string;
 }
 
 export interface TimeSlot {
-  id: number;
-  createdAt: Date;
-  updatedAt: Date;
+  id: string;
+  createdAt: string;
+  updatedAt: string;
 
-  machineId: number;
-  startTime: Date;
-  endTime: Date;
+  machineId: string;
+  startTime: string;
+  endTime: string;
   state: "reserved" | "assigned";
 }
