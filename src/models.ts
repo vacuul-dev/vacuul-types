@@ -5,7 +5,7 @@ export interface Machine {
 
   latitude: number;
   longitude: number;
-  status: "active" | "inactive";
+  state: "active" | "inactive";
 
   location: string | null;
 }
@@ -19,8 +19,8 @@ export interface Appointment {
   machineId: number;
   timeSlotId: number;
   therapyId: number;
-  paymentId: number;
-  state: "acquired" | "completed" | "cancelled";
+  paymentId: number | null;
+  state: "pending" | "acquired" | "completed" | "cancelled";
 }
 
 export interface Therapy {
@@ -41,7 +41,7 @@ export interface Payment {
   userId: number;
 
   amountInCents: number;
-  paymentStatus: "pending" | "completed" | "failed";
+  paymentState: "pending" | "completed" | "failed";
   stripePaymentMethodId: string;
 }
 
@@ -63,5 +63,5 @@ export interface TimeSlot {
   machineId: number;
   startTime: Date;
   endTime: Date;
-  status: "reserved" | "assigned";
+  state: "reserved" | "assigned";
 }
